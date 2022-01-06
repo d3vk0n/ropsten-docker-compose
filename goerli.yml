@@ -1,0 +1,9 @@
+version: "3"
+services:
+  ropsten:
+    image: ethereum/client-go:latest
+    entrypoint: "geth --goerli --http --http.corsdomain '*' --http.addr 0.0.0.0 --http.api admin,eth,debug,net,txpool,personal,web3 --ws --ws.addr 0.0.0.0 --ws.port 8546 --ws.origins * --ws.api admin,eth,debug,net,txpool,personal,web3 --syncmode 'snap' --metrics"
+    ports:
+      - "30303:30303"
+      - "8545:8545"
+      - "8546:8546"
